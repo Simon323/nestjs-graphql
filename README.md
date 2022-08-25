@@ -26,36 +26,128 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
+## Create new project
 
 ```bash
-$ npm install
+$ nest new my-app
+```
+
+## Monorepo / Microservices / Library
+
+```bash
+# Create new app in monorepo context
+$ nest generate app your_app_name
+
+# Create shared library
+$ nest g library name_your_library
+```
+
+## NestJS cli
+
+```bash
+# generate controller
+$ nest g controller users
+
+# generate module
+$ nest g module users
+
+# generate module without tests
+$ nest g module users --no-spec
+
+# generate service
+$ nest g service users
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ yarn start
 
 # watch mode
-$ npm run start:dev
+$ yarn start:dev
 
 # production mode
-$ npm run start:prod
+$ yarn start:prod
+
+# run another app from monorepo
+$ yarn start:dev name_app_from_apps_directory
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ npm run test
+$ yarn test
 
 # e2e tests
-$ npm run test:e2e
+$ yarn test:e2e
 
 # test coverage
-$ npm run test:cov
+$ yarn test:cov
+```
+
+## Run in docker
+
+```bash
+# first time
+$ docker-compose up --build -V
+
+# after
+$ docker-compose up
+```
+
+## Docker Hot Reload
+
+```bash
+# Issue with hot reload in docker
+$ "start:dev": "WATCHPACK_POLLING=true nest start --watch",
+$ https://stackoverflow.com/a/72478714
+```
+
+## RabbitMQ
+
+```bash
+# RabbitMQ GUI
+$ http://localhost:15672
+$ username: guest
+$ password guest
+```
+
+## Auth
+
+```bash
+# npm packages
+- passport
+- @nestjs/passport
+- passport-local
+- @types/passport-local
+- bcrypt
+- @types/bcrypt
+- @nestjs/jwt
+- passport-jwt
+- @types/passport-jwt
+```
+
+# GraphQL
+```bash
+# npm packages
+- @nestjs/graphql
+- graphql-tools
+- apollo-server-express
+
+# install
+$ yarn add @nestjs/graphql graphql-tools apollo-server-express
+```
+
+# .env
+```bash
+# use configuration service instead process.env
+- @nestjs/config
+- joi
+
+# install
+$ yarn add @nestjs/config joi  
 ```
 
 ## Support
