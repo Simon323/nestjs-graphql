@@ -1,6 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import * as Joi from 'joi';
+import { GraphQLModule } from '@nestjs/graphql';
+import { UsersModule } from './users/users.module';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 
 @Module({
   imports: [
@@ -11,6 +14,11 @@ import * as Joi from 'joi';
       }),
       envFilePath: './.env',
     }),
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      autoSchemaFile: true,
+      driver: ApolloDriver,
+    }),
+    UsersModule,
   ],
   controllers: [],
   providers: [],

@@ -130,24 +130,28 @@ $ password guest
 ```
 
 # GraphQL
+
 ```bash
 # npm packages
 - @nestjs/graphql
 - graphql-tools
 - apollo-server-express
+- graphql
+- @nestjs/apollo
 
 # install
-$ yarn add @nestjs/graphql graphql-tools apollo-server-express
+$ yarn add @nestjs/graphql graphql-tools apollo-server-express graphql @nestjs/apollo
 ```
 
 # .env
+
 ```bash
 # use configuration service instead process.env
 - @nestjs/config
 - joi
 
 # install
-$ yarn add @nestjs/config joi  
+$ yarn add @nestjs/config joi
 ```
 
 ## Support
