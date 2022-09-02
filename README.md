@@ -51,8 +51,8 @@ $ nest g controller users
 # generate module
 $ nest g module users
 
-# generate module without tests
-$ nest g module users --no-spec
+# generate service without tests
+$ nest g service users --no-spec
 
 # generate service
 $ nest g service users
@@ -127,6 +127,9 @@ $ password guest
 - @nestjs/jwt
 - passport-jwt
 - @types/passport-jwt
+
+# install
+$ yarn add passport @nestjs/passport passport-local @types/passport-local bcrypt @types/bcrypt @nestjs/jwt passport-jwt @types/passport-jwt
 ```
 
 # GraphQL
