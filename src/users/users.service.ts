@@ -38,6 +38,10 @@ export class UsersService {
     return getUsersArgs.userIds.map((userId) => this.getUser({ userId }));
   }
 
+  public getUserByEmail(email: string): User | null {
+    return this.users.find((user) => user.email === email);
+  }
+
   public deleteUser(deleteUserData: DeleteUserInput): User {
     const userIndex = this.users.findIndex(
       (user) => user.userId === deleteUserData.userId,
