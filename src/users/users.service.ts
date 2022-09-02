@@ -9,7 +9,9 @@ import { DeleteUserInput } from './dto/input/delete-user.input';
 
 @Injectable()
 export class UsersService {
-  private users: User[] = [];
+  private users: User[] = [
+    { email: 'jay@example.com', password: 'pass', userId: '1', age: 32 },
+  ];
 
   public createUser(createUserData: CreateUserInput): User {
     const user: User = {
